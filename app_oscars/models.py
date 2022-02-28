@@ -1,4 +1,8 @@
 from django.db import models
+from django.conf import settings
+from django.core.validators import MaxValueValidator, MinValueValidator
+
+
 
 class Films(models.Model):
     COUNTRIES = [
@@ -15,4 +19,21 @@ class Films(models.Model):
     poster = models.ImageField(upload_to='posters', null=True,blank=True)
 
     def __str__(self):
-        return self.title+", "+self.director
+        return self.polish_title+" ("+self.title+") "+", "+self.director
+
+
+
+class Our_rating(models.Model):
+    review = models.TextField(default="", blank=True)
+    points = models.DecimalField (default=0.0, decimal_places=1, max_digits=3,
+                    validators=[
+                        MaxValueValidator(10.0),
+                        MinValueValidator(0.0)
+                    ]
+                                       )
+    film = models.ForeignKey(Films, on_delete=models.CASCADE)
+    #user = models.ForeignKey(settings.AUTH_USER_MODEL,default=1, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.pk)
+

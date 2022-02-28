@@ -1,0 +1,47 @@
+{% extends 'main.html' %}
+
+{% block title %}*Ranking*{% endblock %}
+
+{% block page %}
+<nav class="navigation">
+    <div class="container">
+        <h1 class="title">RANKING</h1>
+        <p class="link"><a href="#">go back</a></p>
+    </div>
+</nav>
+
+<div class="main-container">
+    <div class="left-container">
+
+    </div>
+    <div class="right-container">
+
+        <div class="container-table">
+
+
+
+            <table class="table" border="1">
+                <tr>
+                    <td> </td>
+                 {% for user in users %}
+                    <td><a href="#">{{ user }}</a></td>
+                 {% endfor %}
+
+                </tr>
+                 {% for film in films %}
+                <tr>
+                    <td><a href="{% url 'films_rating' film.id %}">{{ film.title }}</a></td>
+                    <td>ocena Agata</td>
+                    <td>ocena Alexander</td>
+                    <td>ocena Jan</td>
+                    <td>ocena Dom</td>
+                    <td>ocena Maciej</td>
+                </tr>
+                {% endfor %}
+
+
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
