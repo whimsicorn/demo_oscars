@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def ranking_response(request):
+    return render(request, 'ranking.html')
