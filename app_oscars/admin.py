@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Films, Our_rating
+from .models import Films
 
 @admin.register(Films)
 class FilmAdmin (admin.ModelAdmin):
