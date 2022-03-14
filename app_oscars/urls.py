@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from app_oscars.views import ranking,films_rating,new_film, edit_film, delete_film
+from app_oscars.views import ranking, films_rating,new_film, edit_film, delete_film
 from django.conf import settings
 from django.conf.urls.static import static
 
