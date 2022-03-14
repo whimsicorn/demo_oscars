@@ -31,16 +31,16 @@ def edit_film(request, id):
     return render(request, 'film_form.html', {'form':form})
 
 def delete_film(request, id):
-    film = get_object_or_404(Films, pk=id)
+    films = get_object_or_404(Films, pk=id)
 
     if request.method == "POST":
-        film.delete()
+        films.delete()
         return redirect(ranking)
 
-    return render(request, 'confirm.html', {'film':film})
+    return render(request, 'confirm.html', {'films':films})
 
 def films_rating(request, id):
     films = get_object_or_404(Films, pk=id)
-    return render(request, 'films_rating.html', {'films':films,})
+    return render(request, 'films_rating.html', {'films':films})
 
 
