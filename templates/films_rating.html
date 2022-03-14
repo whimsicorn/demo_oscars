@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+
+{% block title %}Rate film{% endblock %}
+
+{% block page %}
+<h1>Oceń film: </h1>
+
+
+
+
+<h2>{{ films.title }}</h2>
+<p>{{ films.description }}</p>
+
+<a href="{% url 'edit_film' films.id %}">edytuj</a>
+<a href="{% url 'delete_film' films.id %}">usuń</a>
+
+
+
+
+{% endblock %}
+

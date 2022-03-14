@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from app_oscars.models import Films, Our_rating
 from django.contrib.auth import get_user_model
-from .forms import FilmsForm
+from f import Film
 
 def ranking(request):
     films = Films.objects.all()
