@@ -7,5 +7,5 @@ class FilmAdmin (admin.ModelAdmin):
     list_filter = ['country']
     search_fields=['title','description']
 
-admin.site.register(Our_rating)
+
 
