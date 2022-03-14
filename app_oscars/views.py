@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from app_oscars.models import Films, Our_rating
+from app_oscars.models import Films
 from django.contrib.auth import get_user_model
 from .forms import FilmsForm
 
@@ -40,8 +40,7 @@ def delete_film(request, id):
     return render(request, 'confirm.html', {'film':film})
 
 def films_rating(request, id):
-    rating = Our_rating.objects.all()
     films = get_object_or_404(Films, pk=id)
-    return render(request, 'films_rating.html', {'ratig':rating, 'films':films,})
+    return render(request, 'films_rating.html', {'films':films,})
 
 
