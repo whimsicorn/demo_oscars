@@ -1,7 +1,6 @@
 {% load static %}
 
 
-
 <html lang="en">
 <head>
      <meta charset="UTF-8">
@@ -10,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>
-        {% block tytul %}{% endblock %}
+        {% block title %}{% endblock %}
     </title>
 
     <link rel="stylesheet" href="{% static 'style.css' %}">
@@ -19,7 +18,7 @@
 
 <body>
 
-{% block strona %}{% endblock %}
+{% block page %}{% endblock %}
 
 </body>
 </html>
