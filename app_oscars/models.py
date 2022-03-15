@@ -2,8 +2,6 @@ from django.db import models
 from django.conf import settings
 
 
-
-
 class Films(models.Model):
     COUNTRIES = [
         ('US','Stany Zjednoczone'),
