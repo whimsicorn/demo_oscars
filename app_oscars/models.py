@@ -19,6 +19,7 @@ class Films(models.Model):
     def __str__(self):
         return self.polish_title+" ("+self.title+") "+", "+self.director
 
+class Review(models.Model):
 
 
 
