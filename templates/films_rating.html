@@ -16,6 +16,32 @@
 
 
 
+<h2>oceny</h2>
+
+<div class="container_table">
+  <table class="table" border="2">
+    <tr>
+      <td>użytkownik</td>
+      <td>ocena</td>
+    </tr>
+    {% for user in users %}
+    <tr>
+      <td>{{ user.username }}</td>
+      <td>ocena </td>
+      {% endfor %}
+
+    </tr>
+
+  </table>
+</div>
+
+
+
+
+
+
+
+
 
 {% endblock %}
 

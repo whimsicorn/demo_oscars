@@ -27,7 +27,6 @@
         <div class="container-table">
 
 
-
             <table class="table" border="1">
                 <tr>
                     <td> </td>
@@ -39,16 +38,28 @@
                  {% for film in films %}
                 <tr>
                     <td><a href="{% url 'films_rating' film.id %}">{{ film.title }}</a></td>
-                    <td>ocena Agata</td>
-                    <td>ocena Alexander</td>
-                    <td>ocena Jan</td>
-                    <td>ocena Dom</td>
-                    <td>ocena Maciej</td>
+                    {% endfor %}
                 </tr>
-                {% endfor %}
+
+                <tr>
+                    {% for review in reviews %}
+
+                        {% if review.user.username == "Aga" and review.films.id == film.id %}
+                    <td>{{ review.points}}</td>
+                        {% else %}
+                    <td>A</td>
+                        {% endif %}
+
+                    {% endfor %}
+                 </tr>
+
+
+
 
 
             </table>
+
+
         </div>
     </div>
 </div>

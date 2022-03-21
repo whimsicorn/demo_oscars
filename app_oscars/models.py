@@ -1,5 +1,6 @@
 from django.db import models
-from django.conf import settings
+from django.contrib.auth import get_user_model
+
 
 
 class Films(models.Model):
@@ -20,6 +21,13 @@ class Films(models.Model):
         return self.polish_title+" ("+self.title+") "+", "+self.director
 
 class Review(models.Model):
+    points = models.DecimalField(default=0.0, null=True, max_digits=3, decimal_places=1,)
+    review = models.TextField(max_length=500,default="", blank=True)
+    films = models.ForeignKey (Films, on_delete=models.CASCADE)
+    user = models.ForeignKey (get_user_model(), on_delete=models.CASCADE)
+
+    def __str__(self):
+        return "Ocena "+self.user.username+" "+self.films.title
 
 
 
